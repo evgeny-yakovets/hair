@@ -2,3 +2,20 @@
 
 <br>
 <span>This is the First page text</span>
+
+
+
+<div id="#price" >123</div>
+<iframe id="price2">123</iframe>
+<script>
+
+
+    xmlhttp=new XMLHttpRequest;
+    xmlhttp.open("GET","http://localhost/data/hair.xml",false);
+    xmlhttp.send();
+    document.getElementById("price").innerHTML = xmlhttp.responseText;
+    console.log(xmlhttp.responseXML);
+    //document.getElementById("price").innerHTML = xmlDoc;
+    //document.body.appendChild(price);
+    //price.contentWindow.document.write(xmlDoc);
+</script>

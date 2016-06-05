@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='hair.xsl'?>
+<knowledgeDatabase>
+    <tutorial>
+        <title>"Заметки об XSL"</title>
+        <author>Леонов Игорь Васильевич</author>
+    </tutorial>
+    <tutorial>
+        <title>"Заметки об XSL"</title>
+        <author>Леонов Игорь Васильевич</author>
+    </tutorial>
+    <tutorial>
+        <title>"Заметки об XSL"</title>
+        <author>Леонов Игорь Васильевич</author>
+    </tutorial>
+</knowledgeDatabase>

@@ -36,10 +36,11 @@
 		<!-- content start -->
 		<div id="content_container">
 			<div id="content">
-				<h1> This is the Main page</h1>
-
-				<br>
-				<span>This is the Main page text</span>
+				<script>
+					$("<div>").load("http://localhost/pages/Mainpage.html", function() {
+						$("#content").append($(this).html());
+					});
+				</script>
 			</div>
 		</div>
 		<!-- content end -->
@@ -50,9 +51,9 @@
 	<div id="footer_container">
 		<div id="footer">
 			<script> 	
-					$("<div>").load("http://localhost/pages/tpls/footer.html", function() {
-						$("#footer").append($(this).html());
-					});
+				$("<div>").load("http://localhost/pages/tpls/footer.html", function() {
+					$("#footer").append($(this).html());
+				});
 			</script>			
 		</div>
 	</div>

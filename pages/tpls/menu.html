@@ -1,24 +1,27 @@
-				<span>Menu</span>
+	<span>Menu</span>
 <script>
 $( "li" ).click(function(e) {
   $( "div#content" ).load( "http://localhost/pages/" + $( this ).data('value') + ".html");
 	e.stopPropagation();
 });
 </script>
-				<ul>
-				<li data-value="One">
-					<p>One</p>
+	<ul>
+		<li data-value="Mainpage">
+			<p>Main page</p>
+		</li>
+		<li data-value="One">
+			<p>One</p>
+		</li>
+		<li data-value="Two">
+			<p>Two</p>
+			<ul>
+				<li data-value="Three">
+					<p>Three</p>
 				</li>
-				<li data-value="Two">
-					<p>Two</p>
-					<ul>
-						<li data-value="Three">
-							<p>Three</p>
-						</li>
-						<li data-value="Four">
-							<p>Four</p>
-						</li>
-					</ul>
+				<li data-value="Four">
+					<p>Four</p>
 				</li>
-				<li data-value="Five">Five</li>
-				</ul>
+			</ul>
+		</li>
+		<li data-value="Five">Five</li>
+	</ul>
