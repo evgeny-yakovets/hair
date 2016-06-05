@@ -1,1 +1,30 @@
-<span>Header</span>
+<div id="logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+
+        <polygon points="300,20 300,20 375,170 225,170" fill="skyblue">
+
+            <animate attributeName="points" dur="7s"  repeatCount="indefinite" />
+            <animate attributeName="points" dur="7s"  repeatCount="indefinite" />
+        </polygon>
+
+
+        </polygon>
+
+    </svg>
+
+    <script>
+        var coords = [
+            ["350,20 325,170 275,170 250,20","375,20 225,20 300,170 300,170"],
+            ["350,95 350,145 250,170 250,70","400,170 400,170 300,220 300,120"],
+            ["325,70 350,170 250,170 275,70","350,120 400,220 300,220 350,120"],
+            ["350,70 350,170 250,145 250,95","400,120 400,220 300,170 300,170"],
+        ];
+        var elementNumber = Math.floor(Math.random() * (1 - 0) + 0);
+        document.getElementsByTagName('animate')[0].setAttribute("to", coords[elementNumber][0]);
+        document.getElementsByTagName('animate')[1].setAttribute("to", coords[elementNumber][1]);
+
+
+        console.log(coords[elementNumber][0]);
+        console.log(elementNumber);
+    </script>
+</div>
