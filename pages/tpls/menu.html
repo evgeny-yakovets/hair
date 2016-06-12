@@ -1,27 +1,51 @@
-	<span>Menu</span>
 <script>
 $( "li" ).click(function(e) {
   $( "div#content" ).load( "http://localhost/pages/" + $( this ).data('value') + ".html");
 	e.stopPropagation();
 });
 </script>
-	<ul>
+<!--
 		<li data-value="Mainpage">
-			<p>Main page</p>
+			<a href="#">Main page</a>
 		</li>
 		<li data-value="One">
-			<p>One</p>
+			<a href="#">One</a>
 		</li>
 		<li data-value="Two">
-			<p>Two</p>
+			<a href="#">Two</a>
 			<ul>
 				<li data-value="Three">
-					<p>Three</p>
+					<a href="#">Three</a>
 				</li>
 				<li data-value="Four">
-					<p>Four</p>
+					<a href="#">Four</a>
+		/u</li>
+			</ul>
+		</li>
+		<li data-value="Five">
+			<a href="#">Five</a>
+		</li>
+	</ul>
+-->
+	<ul id="navmenu-v">
+		<li data-value="Mainpage">
+			<a href="#">Main page</a>
+		</li>
+		<li data-value="One">
+			<a href="#" data-value="One">One</a>
+		</li>
+		<li data-value="Two">
+			<a href="#">Two</a>
+			<ul>
+				<li data-value="Three">
+					<a href="#">Three</a>
+				</li>
+				<li data-value="Four">
+					<a href="#">Four</a>
 				</li>
 			</ul>
 		</li>
-		<li data-value="Five">Five</li>
+		<li data-value="Five">
+			<a href="#">Five</a>
+		</li>
 	</ul>

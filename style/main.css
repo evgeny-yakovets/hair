@@ -1,15 +1,17 @@
 div{
-	border: solid 1px orange;
+	border: solid 0px orange;
 }
 
 #main{
 	width:100%;
 	height:100%;
+	min-width:800px;
 }
 
 #header_container{
 	width:100%;
-	height:15%;
+	height:80px;
+	margin-bottom: -80px;
 }
 
 #header{
@@ -18,47 +20,266 @@ div{
 }
 
 #logo{
-	width:20%;
+	width:370px;
 	height:100%;
+	display:inline-block;
+	float:left;
+}
+
+#login{
+	width:370px;
+	height:100%;
+	float:right;
+
+	display:inline-block;
+}
+
+#logo-text{
+	width:370px;
+	height:80px;
+
+	position: absolute;
+}
+
+#logo-image{
+	width:370px;
+	height:80px;
+
 }
 
 #main_container{
 	width:100%;
-	height:70%;
+	height:auto;
+	min-height: 100%;
 	position:relative;
 	overflow:hidden;
+	box-sizing: border-box;
+	padding-bottom: 80px;
 }
 
 #menu_container{
-	width:15%;
-	height:100%;
+	width:160px;
+	height:auto;
 	float:left;
-	
+	display:inline-block;
 }
 
 #menu{
 	width:100%;
-	height:100%;	
+	height:auto;
 }
 
 #content_container{
-	width:84%;
-	height:100%;	
-	float:right;
+	max-width: 800px;
+	min-width: 633px;
+	height:auto;
+	min-height: 80%;
+	float:left;
+	display:inline-block;
+	margin-left:20px;
 }
 
 #content{
 	width:100%;
-	height:100%;
+	height:auto;
 }
 
 #footer_container{
 	width:100%;
-	height:14%;
-
+	height:80px;
+	margin-top: -80px;
 }
 
 #footer{
 	width:100%;
 	height:100%;
 }
+
+/*------------------------------------*\
+	    Menu
+\*------------------------------------*/
+
+ul#navmenu-v,
+ul#navmenu-v li,
+ul#navmenu-v ul {
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	width: 160px;
+	list-style: none;
+}
+
+ul#navmenu-v:after {
+	clear: both;
+	display: block;
+	font: 1px/0px serif;
+	content: ".";
+	height: 0;
+	visibility: hidden;
+}
+
+ul#navmenu-v li {
+	float: left;
+	display: block !important;
+	display: inline;
+	position: relative;
+	border:#003366 1px solid;
+}
+ul#navmenu-v li ul li {
+	border:none;
+	border-bottom:#FFFFFF 2px solid;
+}
+
+/* Root Menu */
+ul#navmenu-v a {
+	padding: 0 6px;
+	display: block;
+	background: #003366;
+	color: #FFFFFF;
+	font: bold 12px/28px Verdana, Arial;
+	text-decoration: none;
+	height: auto !important;
+	height: 1%;
+}
+
+
+ul#navmenu-v a:hover,
+ul#navmenu-v li:hover a,
+ul#navmenu-v li.iehover a {
+	background: #FFFFFF;
+	color: #000000;
+
+}
+
+/* 2nd Menu */
+ul#navmenu-v li:hover li a,
+ul#navmenu-v li.iehover li a {
+	background: #003366;
+	color: #FFFFFF;
+	border:#003366 1px solid;
+}
+
+
+ul#navmenu-v li:hover li a:hover,
+ul#navmenu-v li:hover li:hover a,
+ul#navmenu-v li.iehover li a:hover,
+ul#navmenu-v li.iehover li.iehover a {
+	background: #FFFFFF;
+	color: #003366;
+	border:#003366 1px solid;
+}
+
+
+
+ul#navmenu-v ul,
+ul#navmenu-v ul ul,
+ul#navmenu-v ul ul ul {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 161px;
+}
+
+
+ul#navmenu-v li:hover ul ul,
+ul#navmenu-v li:hover ul ul ul,
+ul#navmenu-v li.iehover ul ul,
+ul#navmenu-v li.iehover ul ul ul {
+	display: none;
+}
+
+ul#navmenu-v li:hover ul,
+ul#navmenu-v ul li:hover ul,
+ul#navmenu-v ul ul li:hover ul,
+ul#navmenu-v li.iehover ul,
+ul#navmenu-v ul li.iehover ul,
+ul#navmenu-v ul ul li.iehover ul {
+	display: block;
+}
+/*------------------------------------*\
+		Login-popup
+\*------------------------------------*/
+
+.b-popup{
+	width:100%;
+	min-height:100%;
+	background-color: rgba(0,0,0,0.5);
+	overflow:hidden;
+	position:fixed;
+	top:0px;
+	z-index: 10;
+}
+.b-popup .b-popup-content{
+	margin:40px auto 0px auto;
+	width:600px;
+	height: 300px;
+	padding:10px;
+	background-color: #c5c5c5;
+	border-radius:5px;
+	box-shadow: 0px 0px 10px #000;
+}
+
+.b-popup-content #popup-close {
+	float:right;
+}
+
+#autorization-container{
+	margin-left: 200px;
+	margin-top: 70px;
+}
+
+#login-container{
+	margin-top:3px;
+	margin-bottom:3px;
+	width:60px;
+	height: 40px;
+}
+
+#login-text{
+	text-align:right;
+	width:auto;
+	float:left;
+	display:inline-block;
+}
+
+#login-input{
+	text-align:left;
+	width:auto;
+	float:left;
+	display:inline-block;
+}
+
+#pass-container{
+	margin-top:3px;
+	margin-bottom:3px;
+	width:60px;
+	height: 40px;
+}
+
+#pass-text{
+	text-align:right;
+	width:auto;
+	float:left;
+	display:inline-block;
+}
+
+#pass-input{
+	text-align:left;
+	width:auto;
+	float:left;
+	display:inline-block;
+}
+
+#submit-container{
+	margin-top:3px;
+	margin-bottom:3px;
+
+}
+
+#submit{
+	text-align:left;
+	width:auto;
+	float:left;
+	display:inline-block;
+}
+

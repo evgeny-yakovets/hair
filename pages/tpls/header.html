@@ -1,30 +1,80 @@
 <div id="logo">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+    <div id="logo-text">
+        <p id="company-name">Company</p>
+    </div>
+    <div id="logo-image">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
 
-        <polygon points="300,20 300,20 375,170 225,170" fill="skyblue">
+            <polygon points="300,20 300,20 375,170 225,170" fill="skyblue">
 
-            <animate attributeName="points" dur="7s"  repeatCount="indefinite" />
-            <animate attributeName="points" dur="7s"  repeatCount="indefinite" />
-        </polygon>
-
-
-        </polygon>
-
-    </svg>
-
-    <script>
-        var coords = [
-            ["350,20 325,170 275,170 250,20","375,20 225,20 300,170 300,170"],
-            ["350,95 350,145 250,170 250,70","400,170 400,170 300,220 300,120"],
-            ["325,70 350,170 250,170 275,70","350,120 400,220 300,220 350,120"],
-            ["350,70 350,170 250,145 250,95","400,120 400,220 300,170 300,170"],
-        ];
-        var elementNumber = Math.floor(Math.random() * (1 - 0) + 0);
-        document.getElementsByTagName('animate')[0].setAttribute("to", coords[elementNumber][0]);
-        document.getElementsByTagName('animate')[1].setAttribute("to", coords[elementNumber][1]);
+                <animate attributeName="points" dur="7s"  repeatCount="indefinite" />
+                <animate attributeName="points" dur="7s"  repeatCount="indefinite" />
+            </polygon>
 
 
-        console.log(coords[elementNumber][0]);
-        console.log(elementNumber);
-    </script>
+            </polygon>
+
+        </svg>
+
+        <script>
+            var coords = [
+                ["350,20 325,170 275,170 250,20","375,20 225,20 300,170 300,170"],
+                ["350,95 350,145 250,170 250,70","400,170 400,170 300,220 300,120"],
+                ["325,70 350,170 250,170 275,70","350,120 400,220 300,220 350,120"],
+                ["350,70 350,170 250,145 250,95","400,120 400,220 300,170 300,170"],
+            ];
+            var elementNumber = Math.floor(Math.random() * (1 - 0) + 0);
+            document.getElementsByTagName('animate')[0].setAttribute("to", coords[elementNumber][0]);
+            document.getElementsByTagName('animate')[1].setAttribute("to", coords[elementNumber][1]);
+
+        </script>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function(){
+        //Скрыть PopUp при загрузке страницы
+        PopUpHide();
+    });
+    //Функция отображения PopUp
+    function PopUpShow(){
+        $("#popup1").show();
+    }
+    //Функция скрытия PopUp
+    function PopUpHide(){
+        $("#popup1").hide();
+    }
+</script>
+
+<script>
+
+</script>
+
+<div id="login">
+    <a href="javascript:PopUpShow()">Login</a>
+</div>
+<div class="b-popup" id="popup1">
+    <div class="b-popup-content">
+        Text in Popup
+        <a id="popup-close" href="javascript:PopUpHide()">x</a>
+        <div id="autorization-container" class="tformat1">
+            <form name="test" method="post">
+                <div id="autorization" class="tformat1">
+                    <div id="login-container">
+                        <div id="login-text">Логин:</div>
+                        <div id="login-input"><input type="text" name="message" size="7" style="background-color:#cdebff;"></div>
+                    </div>
+                    <div id="pass-container">
+                        <div id="pass-text">Пароль:</div>
+                        <div id="pass-input"><input type="text" name="message" size="7" style="background-color:#cdebff;"></div>
+                    </div>
+                    <div id="submit-container">
+                        <div id=""></div>
+                        <div id="submit"><input type="submit" value="Войти" style="background-color:#cdebff;" onclick=""></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
