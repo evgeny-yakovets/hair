@@ -1,51 +1,33 @@
+
 <script>
 $( "li" ).click(function(e) {
   $( "div#content" ).load( "http://localhost/pages/" + $( this ).data('value') + ".html");
 	e.stopPropagation();
 });
 </script>
-<!--
-		<li data-value="Mainpage">
-			<a href="#">Main page</a>
-		</li>
-		<li data-value="One">
-			<a href="#">One</a>
-		</li>
-		<li data-value="Two">
-			<a href="#">Two</a>
-			<ul>
-				<li data-value="Three">
-					<a href="#">Three</a>
-				</li>
-				<li data-value="Four">
-					<a href="#">Four</a>
-		/u</li>
-			</ul>
-		</li>
-		<li data-value="Five">
-			<a href="#">Five</a>
-		</li>
-	</ul>
--->
+
 	<ul id="navmenu-v">
 		<li data-value="Mainpage">
-			<a href="#">Main page</a>
+			<a href="#">ГЛАВНАЯ</a>
 		</li>
 		<li data-value="One">
-			<a href="#" data-value="One">One</a>
+			<a href="#" data-value="One">О НАС</a>
 		</li>
-		<li data-value="Two">
-			<a href="#">Two</a>
+		<li data-value="Twoo">
+			<a href="#">НАШИ УСЛУГИ</a>
 			<ul>
 				<li data-value="Three">
-					<a href="#">Three</a>
+					<a href="#">ЖЕНСКИЙ СТРИЖКИ</a>
 				</li>
 				<li data-value="Four">
-					<a href="#">Four</a>
+					<a href="#">МУЖСКИЕ СТРИЖКИ</a>
 				</li>
 			</ul>
 		</li>
 		<li data-value="Five">
-			<a href="#">Five</a>
+			<a href="#">ЦЕНЫ</a>
+		</li>
+		<li data-value="Six">
+			<a href="#">ВАКАНСИИ</a>
 		</li>
 	</ul>
