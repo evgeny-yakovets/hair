@@ -15,6 +15,7 @@
         </svg>
 
         <script>
+            var islogin = false;
             var coords = [
                 ["350,20 325,170 275,170 250,20","375,20 225,20 300,170 300,170"],
                 ["350,95 350,145 250,170 250,70","400,170 400,170 300,220 300,120"],
@@ -37,11 +38,33 @@
     });
     //Функция отображения PopUp
     function PopUpShow(){
-        $("#popup1").show();
+        console.log(islogin);
+        if (!islogin){
+            $("#popup1").show();
+            $("#username").focus();
+        }else {
+            islogin = false;
+            $( "a#status" ).text( "Login" );
+        }
     }
     //Функция скрытия PopUp
     function PopUpHide(){
         $("#popup1").hide();
+    }
+
+    function login(){
+        $.getJSON( "http://localhost/data/users.json", function( json ) {
+            $.each(json.users, function(i,user){
+                if((user.name == $( "#username").val()) && (user.pass == $( "#pass").val()))
+                {
+                    $( "a#status" ).text( user.name );
+                    islogin = true;
+                    PopUpHide();
+                    console.log(user.name);
+                }
+            })
+        });
+
     }
 </script>
 
@@ -50,26 +73,27 @@
 </script>
 
 <div id="login">
-    <a href="javascript:PopUpShow()">Login</a>
+    <a href="javascript:PopUpShow()" id="status">Login</a>
 </div>
 <div class="b-popup" id="popup1">
     <div class="b-popup-content">
         Text in Popup
         <a id="popup-close" href="javascript:PopUpHide()">x</a>
         <div id="autorization-container" class="tformat1">
-            <form name="test" method="post">
+            <form id="login-form" method="post">
                 <div id="autorization" class="tformat1">
                     <div id="login-container">
-                        <div id="login-text">Логин:</div>
-                        <div id="login-input"><input type="text" name="message" size="7" style="background-color:#cdebff;"></div>
+                        <div id="login-text">Login:</div>
+                        <div id="login-input"><input id="username" type="text" name="message" size="7" style="background-color:#cdebff;"></div>
                     </div>
                     <div id="pass-container">
-                        <div id="pass-text">Пароль:</div>
-                        <div id="pass-input"><input type="text" name="message" size="7" style="background-color:#cdebff;"></div>
+                        <div id="pass-text">Password:</div>
+                        <div id="pass-input"><input id="pass" type="text" name="message" size="7" style="background-color:#cdebff;"></div>
                     </div>
                     <div id="submit-container">
                         <div id=""></div>
-                        <div id="submit"><input type="submit" value="Войти" style="background-color:#cdebff;" onclick=""></div>
+                        <!--<div id="submit"><input type="submit" value="Login" style="background-color:#cdebff;" onclick="login"></div>-->
+                        <a href="javascript:login()">Login</a>
                     </div>
                 </div>
             </form>
